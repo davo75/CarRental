@@ -38,6 +38,7 @@ public class CarRental {
          *  Average Fuel Cost = $1.52
          *  No revenue as no rentals were requested
          */
+        
         System.out.println("***TEST 1***\n");
 
         //create a new vehicle

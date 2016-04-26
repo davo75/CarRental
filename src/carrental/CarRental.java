@@ -32,13 +32,13 @@ public class CarRental {
          * two fuel purchases and show it's state again
          *
          * Vehicle state after test should be:
-         *  Number of Services = 0
-         *  Km Travelled = 250km
-         *  Fuel Economy = 60L/100km
-         *  Average Fuel Cost = $1.52
-         *  No revenue as no rentals were requested
+         * Number of Services = 0
+         * Km Travelled = 250km
+         * Fuel Economy = 60L/100km
+         * Average Fuel Cost = $1.52
+         * No revenue as no rentals were requested
          */
-        
+ 
         System.out.println("***TEST 1***\n");
 
         //create a new vehicle

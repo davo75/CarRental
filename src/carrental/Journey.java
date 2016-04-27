@@ -25,6 +25,14 @@ public class Journey {
     }
 
     /**
+     * Constructor Sets the number of kilometers for a journey.
+     */
+    public Journey(double numKmForJourney) {
+        
+        this.numKmForJourney = numKmForJourney;
+    } 
+    
+    /**
      * Gets the number of kilometers for the journey
      *
      * @return the number of kilometers for the journey

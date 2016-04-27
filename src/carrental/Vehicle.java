@@ -283,10 +283,10 @@ public class Vehicle {
             this.vehicleTotalRevenue += kmRental.getKmRentalRevenue();
             //if the actual km travelled is less than the inital km at the time of booking then display discount message
             if (kmRental.getActualKmForRental() < kmRental.getNumKm()) {
-                System.out.println("Discount! km driven was less then original rental km. You will only be charged for " + kmRental.getActualKmForRental() + "km");
+                System.out.println("Discount! The numebr of kilometres driven was less then original rental kilometres. You will only be charged for " + kmRental.getActualKmForRental() + "km");
             //else the actual km was more than the initial booking amount so display the extra charge message
             } else if (kmRental.getActualKmForRental() > kmRental.getNumKm()) {
-                System.out.println("Extra Charge! km driven was more than original rental km. You will be charged for " + kmRental.getActualKmForRental() + "km");
+                System.out.println("Extra Charge! The numebr of kilometres driven was more than original rental kilometres. You will be charged for " + kmRental.getActualKmForRental() + "km");
             }
             //reset the rental
             kmRental = null;
@@ -376,7 +376,13 @@ public class Vehicle {
 
         //get the number of services message
         if (numServices == 0) {
-            vehicleStatus += "No services have been recorded for this vehicle.\n";
+            vehicleStatus += "No services have been recorded for this vehicle. ";
+            if (totalKmTravelled > 0) {
+                vehicleStatus += "It should have undergone " + this.totalKmTravelled/SERVICE_DUE_KM  + " service(s).\n";
+            } else {
+                vehicleStatus += "\n";
+            }
+       
         } else {
             vehicleStatus += "Number of services: " + this.getNumberOfServices() + "\n";
             vehicleStatus += "Kilometers since last service: " + this.kmSinceLastService() + "\n";
@@ -394,13 +400,14 @@ public class Vehicle {
             vehicleStatus += "No fuel has been purchased yet.\n";
         } else {
             vehicleStatus += "Fuel Economy: " + df1.format(getFuelEconomy()) + " Litres/100km\n";
-            vehicleStatus += "Average Fuel Cost: $" + df2.format(getAvgFuelCost()) + "\n";
+            vehicleStatus += "Average Fuel Cost: $" + df2.format(getAvgFuelCost()) + " per litre\n";
         }
-
+        
+        
         //get the vehicle revenue stats message
         vehicleStatus += "Revenue for this rental: $" + df2.format(this.rentalRevenue) + "\n";
         vehicleStatus += "Overall Revenue for this vehicle: $" + df2.format(this.vehicleTotalRevenue) + "\n";
-
+        
         //return the vehicle status
         return vehicleStatus;
     }

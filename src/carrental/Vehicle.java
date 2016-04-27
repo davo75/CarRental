@@ -361,7 +361,7 @@ public class Vehicle {
      *
      * @return the vehicle's state
      */
-    public String print() {
+    public void print() {
 
         //set up the format for decimal values
         DecimalFormat df1 = new DecimalFormat("0.0"); //one decimal place
@@ -409,7 +409,7 @@ public class Vehicle {
         vehicleStatus += "Overall Revenue for this vehicle: $" + df2.format(this.vehicleTotalRevenue) + "\n";
         
         //return the vehicle status
-        return vehicleStatus;
+        System.out.println(vehicleStatus);
     }
 
     /**
@@ -418,7 +418,7 @@ public class Vehicle {
      * @return the vehicle's manufacturer
      */
     public String getManufacturer() {
-        return manufacturer;
+        return this.manufacturer;
     }
     
     /**

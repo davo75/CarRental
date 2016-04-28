@@ -47,8 +47,8 @@ public class CarRental {
         System.out.println(excel.print());
         
         //add a journey of 150km
-        Journey journey0 = new Journey();
-        journey0.setNumKmForJourney(150);
+        Journey journey0 = new Journey(150);
+        //journey0.setNumKmForJourney(150);
         excel.addJourney(journey0);
 
         //add a fuel purchase of 100L @ 123.78	
@@ -59,8 +59,8 @@ public class CarRental {
         excel.addFuelPurchase(fp02);
 
         //add a journey of 100km
-        Journey journey01 = new Journey();
-        journey01.setNumKmForJourney(100);
+        Journey journey01 = new Journey(100);
+        //journey01.setNumKmForJourney(100);
         excel.addJourney(journey01);
 
         //print the state of the vehicle
@@ -99,14 +99,14 @@ public class CarRental {
         //add a journey of 150km
         System.out.println("***Adding Journey of 150km***");
         //add 2 journeys - one for 150km and another for 100km       
-        Journey journey1 = new Journey();
-        journey1.setNumKmForJourney(150);
+        Journey journey1 = new Journey(150);
+        //journey1.setNumKmForJourney(150);
         corolla.addJourney(journey1);
 
         //add a journey of 120km
         System.out.println("***Adding Journey of 120km***");
-        Journey journey2 = new Journey();
-        journey2.setNumKmForJourney(120);
+        Journey journey2 = new Journey(120);
+        //journey2.setNumKmForJourney(120);
         corolla.addJourney(journey2);
 
         //pay for the rental
@@ -162,8 +162,8 @@ public class CarRental {
 
         //add a journey of 50km        
         System.out.println("***Adding Journey of 50km***");
-        Journey journey3 = new Journey();
-        journey3.setNumKmForJourney(50);
+        Journey journey3 = new Journey(50);
+        //journey3.setNumKmForJourney(50);
         corolla.addJourney(journey3);
 
         //add a fuel purchase of 100L @ 123.78
@@ -173,8 +173,8 @@ public class CarRental {
 
         //add a journey of 45km  
         System.out.println("***Adding Journey of 45km***");
-        Journey journey4 = new Journey();
-        journey4.setNumKmForJourney(45);
+        Journey journey4 = new Journey(45);
+        //journey4.setNumKmForJourney(45);
         corolla.addJourney(journey4);
 
         //add a fuel purchase of 150L @ 80.00
@@ -217,14 +217,14 @@ public class CarRental {
 
         //add a journey of 200km
         System.out.println("***Adding Journey of 200km***");
-        Journey journey5 = new Journey();
-        journey5.setNumKmForJourney(200);
+        Journey journey5 = new Journey(200);
+        //journey5.setNumKmForJourney(200);
         corolla.addJourney(journey5);
 
         //add a journey of 400km
         System.out.println("***Adding Journey of 400km***");
-        Journey journey6 = new Journey();
-        journey6.setNumKmForJourney(400);
+        Journey journey6 = new Journey(400);
+        //journey6.setNumKmForJourney(400);
         corolla.addJourney(journey6);
 
         //pay for the rental
@@ -279,20 +279,20 @@ public class CarRental {
 
         //add a journey of 100km (1 day)
         System.out.println("***Adding Journey of 100km***");
-        Journey journey7 = new Journey();
-        journey7.setNumKmForJourney(100);
+        Journey journey7 = new Journey(100);
+        //journey7.setNumKmForJourney(100);
         corolla.addJourney(journey7);
 
         //add a journey of 200km (2 days)
         System.out.println("***Adding Journey of 100km***");
-        Journey journey8 = new Journey();
-        journey8.setNumKmForJourney(200);
+        Journey journey8 = new Journey(200);
+        //journey8.setNumKmForJourney(200);
         corolla.addJourney(journey8);
 
         //add a journey of 200km (3 days)
         System.out.println("***Adding Journey of 200km***");
-        Journey journey9 = new Journey();
-        journey9.setNumKmForJourney(200);
+        Journey journey9 = new Journey(200);
+        //journey9.setNumKmForJourney(200);
         corolla.addJourney(journey9);
         
         //add a fuel purchase of 100L @ 139.60

@@ -283,10 +283,10 @@ public class Vehicle {
             this.vehicleTotalRevenue += kmRental.getKmRentalRevenue();
             //if the actual km travelled is less than the inital km at the time of booking then display discount message
             if (kmRental.getActualKmForRental() < kmRental.getNumKm()) {
-                System.out.println("Discount! The numebr of kilometres driven was less then original rental kilometres. You will only be charged for " + kmRental.getActualKmForRental() + "km");
+                System.out.println("Discount! The number of kilometres driven was less then original rental kilometres. You will only be charged for " + kmRental.getActualKmForRental() + "km");
             //else the actual km was more than the initial booking amount so display the extra charge message
             } else if (kmRental.getActualKmForRental() > kmRental.getNumKm()) {
-                System.out.println("Extra Charge! The numebr of kilometres driven was more than original rental kilometres. You will be charged for " + kmRental.getActualKmForRental() + "km");
+                System.out.println("Extra Charge! The number of kilometres driven was more than original rental kilometres. You will be charged for " + kmRental.getActualKmForRental() + "km");
             }
             //reset the rental
             kmRental = null;
@@ -296,10 +296,10 @@ public class Vehicle {
             this.vehicleTotalRevenue += dayRental.getDayRentalRevenue();
             //if the actual days used is less than the inital days set at the time of booking then display discount message
             if (dayRental.getActualDaysRented() < dayRental.getNumDays()) {
-                System.out.println("Discount! Days rented was less then original rental days. You will only be charged for " + dayRental.getActualDaysRented() + " days");
+                System.out.println("Discount! Days rented was less then original rental days. You will only be charged for " + dayRental.getActualDaysRented() + " day(s)");
                 //else the actual number of days was more than the initial number of days at the booking so display the extra charge message
             } else if (dayRental.getActualDaysRented() > dayRental.getNumDays()) {
-                System.out.println("Extra Charge! Days rented was more then original rental days. You will be charged for " + dayRental.getActualDaysRented() + " days");
+                System.out.println("Extra Charge! Days rented was more then original rental days. You will be charged for " + dayRental.getActualDaysRented() + " day(s)");
             }
             //reset the rental
             dayRental = null;

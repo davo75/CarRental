@@ -401,8 +401,7 @@ public class Vehicle {
         } else {
             vehicleStatus += "Fuel Economy: " + df1.format(getFuelEconomy()) + " Litres/100km\n";
             vehicleStatus += "Average Fuel Cost: $" + df2.format(getAvgFuelCost()) + " per litre\n";
-        }
-        
+        }        
         
         //get the vehicle revenue stats message
         vehicleStatus += "Revenue for this rental: $" + df2.format(this.rentalRevenue) + "\n";

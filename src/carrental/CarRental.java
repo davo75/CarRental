@@ -28,11 +28,11 @@ public class CarRental {
     public static void main(String[] args) {
 
         /* TEST 1 
-         * Create a vehicle, show it's inital state thenadd two journeys and 
+         * Create a vehicle, show it's inital state then add two journeys and 
          * two fuel purchases and show it's state again
          *
          * Vehicle state after test should be:
-         * Number of Services = 0
+         * Number of Services = 0, should have done 2.
          * Km Travelled = 250km
          * Fuel Economy = 60L/100km
          * Average Fuel Cost = $1.52

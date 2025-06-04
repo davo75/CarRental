@@ -184,7 +184,7 @@ public class CarRental {
 
         //pay for the rental
         corolla.payRental();
-        System.out.println("***Rental returned. Only 95km were driven not the expectd 300km. Total revenue will only be $95 and vehicle can be rented again as km driven didnt exceed 100km***");
+        System.out.println("***Rental returned. Only 95km were driven not the expected 300km. Total revenue will only be $95 and vehicle can be rented again as km driven didnt exceed 100km***");
         //display state of vehicle
         System.out.println(corolla.print());
 

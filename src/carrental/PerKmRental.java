@@ -48,12 +48,12 @@ public class PerKmRental {
     }
 
     /**
-     * Sets the number of actual kilometres the vehicle was rented for, this
-     * could be different to the initial number of kilometres the vehicle was
-     * rented for.
+     * Adds to the number of actual kilometres the vehicle was rented for. This
+     * value could be different to the initial number of kilometres the vehicle
+     * was rented for.
      *
-     * @param actualKmForRental the number of actual number of kilometres the
-     * vehicle travelled for the rental
+     * @param actualKmForRental the number of kilometres to add to the total
+     *                          distance travelled for the rental
      */
     public void setActualKmForRental(double actualKmForRental) {
 

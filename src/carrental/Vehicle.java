@@ -148,10 +148,12 @@ public class Vehicle {
         //copy the number of services
         this.numServices = vehicleCopy.numServices;
 
-        //copy the journey, fuel purchases and services lists
-        this.journeys = vehicleCopy.journeys;
-        this.fuelPurchases = vehicleCopy.fuelPurchases;
-        this.services = vehicleCopy.services;
+        //copy the journey, fuel purchases and services lists. New lists are
+        //created so modifications to the copied vehicle don't affect the
+        //original object.
+        this.journeys = new ArrayList<>(vehicleCopy.journeys);
+        this.fuelPurchases = new ArrayList<>(vehicleCopy.fuelPurchases);
+        this.services = new ArrayList<>(vehicleCopy.services);
         
         //copy the overall revenue for the vehicle
         this.vehicleTotalRevenue = vehicleCopy.vehicleTotalRevenue;
@@ -162,13 +164,16 @@ public class Vehicle {
         //if rental type is a kilometre type then copy the rental and revenue details
         if (vehicleCopy.kmRental != null) {
             rentalType = "KM RENTAL";
-            this.kmRental = vehicleCopy.kmRental;
-            this.rentalRevenue = vehicleCopy.kmRental.getKmRentalRevenue();          
+            this.kmRental = new PerKmRental(vehicleCopy.kmRental.getNumKm());
+            this.kmRental.setActualKmForRental(vehicleCopy.kmRental.getActualKmForRental());
+            this.rentalRevenue = this.kmRental.getKmRentalRevenue();
         //else if rental type is a day rental then copy the rental and revenue details
         } else if (vehicleCopy.dayRental != null) {
             rentalType = "DAY RENTAL";
-            this.dayRental = vehicleCopy.dayRental;
-            this.rentalRevenue = vehicleCopy.dayRental.getDayRentalRevenue();
+            this.dayRental = new PerDayRental(vehicleCopy.dayRental.getNumKms(),
+                                             vehicleCopy.dayRental.getNumDays());
+            this.dayRental.setActualDaysRented(vehicleCopy.dayRental.getActualDaysRented());
+            this.rentalRevenue = this.dayRental.getDayRentalRevenue();
         }
         System.out.println("\nBelow is a COPY of the " + rentalType + " " + manufacturer + " " + model);
     }
@@ -327,6 +332,10 @@ public class Vehicle {
      * @return the average fuel cost for the vehicle
      */
     public double getAvgFuelCost() {
+        //avoid division by zero if no fuel has been purchased yet
+        if (totalFuelLitres == 0) {
+            return 0;
+        }
         //calculate average fuel cost
         return totalFuelCost / totalFuelLitres;
     }
@@ -338,7 +347,9 @@ public class Vehicle {
      */
     public boolean dueForService() {
 
-        return kmSinceLastService() > SERVICE_DUE_KM;
+        //service is required once the distance since the last service reaches
+        //the service interval
+        return kmSinceLastService() >= SERVICE_DUE_KM;
     }
 
     /**
@@ -489,6 +500,10 @@ public class Vehicle {
      * @return the vehicle's fuel economy
      */
     public double getFuelEconomy() {
+        //avoid division by zero if the vehicle has not travelled yet
+        if (totalKmTravelled == 0) {
+            return 0;
+        }
         //calculate the fuel economy
         return (totalFuelLitres * 100) / totalKmTravelled;
     }
